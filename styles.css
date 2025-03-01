@@ -1,0 +1,225 @@
+:root {
+    /* Primary color*/
+    --primary-50:#FEFCF5;
+    --primary-100:#FEF8E1;
+    --primary-200:#FEF4CD;
+    --primary-300:#FEF0B9;
+    --primary-400:#FEECA5;
+    --primary-500:#FEE891;
+    --primary-600:#FEE47D;
+    --primary-700:#FEE069;
+    --primary-800:#FEDC55;
+    --primary-900:#FED841;
+    --primary-950:#FED638;
+
+
+    /* Secundary color*/
+
+    /* Basic color*/
+    --white: #fff;
+    --black: #000;
+    --gray-950: #101010;
+    --gray-900: #262626;
+    --gray-800: #3B3B3B;
+    --gray-700: #515151;
+    --gray-600: #676767;
+    --gray-500: #7D7D7D;
+    --gray-400: #929292;
+    --gray-300: #A8A8A8;
+    --gray-200: #BEBEBE;
+    --gray-100: #D4D4D4;
+    --gray-50: #E9E9E9;
+
+    /* Font-family */
+    --main-font: Helvetica, Arial, sans-serif;
+
+    /* Font-size */
+    --font-size-h1-plus-plus: 4.8rem;
+    --font-size-h1-plus: 4.0rem;
+    --font-size-h1: 3.2rem;
+    --font-size-h2: 2.4rem;
+    --font-size-h3: 2.0rem;
+    --font-size-h4: 1.6rem;
+}
+
+/* Globals */
+html {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    background-color: var(--gray-900);
+    color: var(--white);    
+    font-family: var(--main-font);
+}
+a {
+    text-decoration: none;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    border-top: 0.2rem solid var(--primary-950);
+    border-bottom: 0.2rem solid var(--primary-950);
+    padding: 3rem;
+}
+h2 {
+    padding: 1.2rem 2.4rem;
+}
+h3 {
+}
+h4 {
+}
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.logo {
+    height: 9.6rem;
+    width: 9.6rem;
+}
+
+.header {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra la frase horizontalmente */
+    padding: 1rem;
+    position: relative; /* Para que el logo se quede fijo */
+    background-color: var(--gray-900); /* Color de fondo */
+    height: 10rem; /* Altura fija */
+    margin: 1.2rem auto 10rem auto;
+}
+
+.logo {
+    width: 9.2rem;
+    height: 9.2rem;
+    position: absolute; /* Pegadito a la esquina */
+    left: 0; /* Esquina izquierda */
+    top: 50%; /* Lo centramos verticalmente */
+    transform: translateY(-50%); /*Truco para que quede centrado*/
+}
+
+.logo:hover {
+    transform: translateY(-50%) rotate(360deg);
+    transition: transform 1s ease-in-out;
+  }
+
+.pokemonSearch {
+display: flex; 
+justify-content: start; 
+gap: 1.5rem; 
+margin: 3rem 0;  
+gap: 2.4rem;
+}
+
+.pokemonSearch__id {
+padding: 1rem;
+width: 30rem;
+border: 0.2rem solid var(--primary-950);
+border-radius: 0.6rem;
+text-align: center;
+outline: none;
+font-size: var(--font-size-h4);
+transition: box-shadow 0.3s ease;
+}
+
+.pokemonSearch__button {
+    padding: 1rem 2.4rem;
+    background-color: var(--primary-950);
+    color: var(--black);
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+  }
+
+.cards{    
+    display: flex;
+    justify-content:space-evenly;  
+    margin: 5rem;  
+}
+/* From Uiverse.io by dylanharriscameron */ 
+.cards__card {
+    position: relative;
+    width: 30rem;
+    height: 36rem;
+    border-radius: 1.6rem;
+    z-index: 1111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 6px #bebebe, -2px -2px 20px #ffffff;    
+  }
+  
+  .cards__bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 29rem;
+    height: 35rem;
+    z-index: 2;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(24px);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    outline: 2px solid white;
+  }
+  
+  .cards__blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    background-color: var(--primary-950);
+    opacity: 1;
+    filter: blur(1.2rem);
+    animation: blob-bounce 5s infinite ease;
+  }
+  
+  @keyframes blob-bounce {
+    0% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  
+    25% {
+      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+  
+    50% {
+      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+  
+    75% {
+      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+  
+    100% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  }
+  
+  .cards__title, .cards__image, .cards__experience {
+    z-index: 3; /* Más alto que el .bg */
+    position: relative; /* Para que el z-index se aplique */
+    color: var(--black);
+  }
+
+  .cards__image {
+    width: 184px; /* El doble (92px x 2) */
+    height: 184px; /* El doble (92px x 2) */
+    object-fit: contain; /* Mantiene la proporción sin deformarse */
+    image-rendering: pixelated; /* Para que no se vea borrosa */
+    
+  }
+  

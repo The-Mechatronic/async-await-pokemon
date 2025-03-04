@@ -72,43 +72,54 @@ h1 {
 h2 {
     padding: 1.2rem 2.4rem;
 }
-h3 {
-}
-h4 {
-}
+
 .container {
     max-width: 120rem;
     margin: 0 auto;
 }
-.logo {
-    height: 9.6rem;
-    width: 9.6rem;
-}
 
 .header {
-    display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra la frase horizontalmente */
-    padding: 1rem;
-    position: relative; /* Para que el logo se quede fijo */
-    background-color: var(--gray-900); /* Color de fondo */
-    height: 10rem; /* Altura fija */
-    margin: 1.2rem auto 10rem auto;
+  display: grid;
+  grid-template-areas: "logo title"; /* Por defecto horizontal */
+  grid-template-columns: auto 1fr; /* Logo pequeño + Título ocupa todo o sea que el logo solo ocupa lo que mide*/
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  padding: 1.2rem;
+  background-color: var(--gray-900);
+  height: 10rem; 
+  margin: 1.2rem auto 8rem auto;
+  text-align: center;
+  gap: 2.4rem; /* Espacio entre logo y título */
 }
 
-.logo {
-    width: 9.2rem;
-    height: 9.2rem;
-    position: absolute; /* Pegadito a la esquina */
-    left: 0; /* Esquina izquierda */
-    top: 50%; /* Lo centramos verticalmente */
-    transform: translateY(-50%); /*Truco para que quede centrado*/
+.header__logo {
+  grid-area: logo; /* Asignamos la zona del logo */
+  width: 9.6rem;
+  height: 9.6rem;
 }
 
-.logo:hover {
-    transform: translateY(-50%) rotate(360deg);
-    transition: transform 1s ease-in-out;
+.header__title {
+  grid-area: title; /* Zona para el título */
+}
+
+@media (width < 768px) {
+  .header {
+    grid-template-areas: 
+      "logo"
+      "title"; /* Cambiamos a vertical */
+    grid-template-columns: 1fr; /* 1 sola columna */
+    grid-template-rows: auto auto; /* Las filas se ajustan */
+    height: auto; /* Altura automática */
+    margin: 0 auto 0 auto;
+    gap: 0.4rem;
   }
+
+  .header__logo,
+  .header__title {
+    justify-self: center; /* Centrar el título */
+    margin: 0 auto;
+  }
+}
 
 .pokemonSearch {
 display: flex; 
@@ -140,9 +151,21 @@ transition: box-shadow 0.3s ease;
   }
 
 .cards{    
-    display: flex;
-    justify-content:space-evenly;  
+    display: grid;
+    gap: 2.4rem;
+    grid-template-columns: repeat(3, 1fr);
     margin: 5rem;  
+}
+
+@media (width < 768px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (width < 480px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
 }
 /* From Uiverse.io by dylanharriscameron */ 
 .cards__card {

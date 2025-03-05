@@ -13,7 +13,8 @@
     --primary-950:#FED638;
 
 
-    /* Secundary color*/
+    /* Secundary color*/  
+    --secundary-950:#00FFCC;
 
     /* Basic color*/
     --white: #fff;
@@ -53,7 +54,7 @@ html {
 }
 
 body {
-    font-size: 16px;
+    font-size: var(--font-size-h4);
     background-color: var(--gray-900);
     color: var(--white);    
     font-family: var(--main-font);
@@ -67,7 +68,7 @@ h1 {
     text-align: center;
     border-top: 0.2rem solid var(--primary-950);
     border-bottom: 0.2rem solid var(--primary-950);
-    padding: 3rem;
+    padding: 2rem;
 }
 h2 {
     padding: 1.2rem 2.4rem;
@@ -78,26 +79,23 @@ h2 {
     margin: 0 auto;
 }
 
+.header__logo {
+  grid-area: logo; /* Asignamos la zona del logo */
+  width: 9.6rem;
+  height: 9.6rem;
+}
 .header {
   display: grid;
   grid-template-areas: "logo title"; /* Por defecto horizontal */
   grid-template-columns: auto 1fr; /* Logo pequeño + Título ocupa todo o sea que el logo solo ocupa lo que mide*/
   align-items: center; /* Centrar verticalmente */
   justify-content: center; /* Centrar horizontalmente */
-  padding: 1.2rem;
-  background-color: var(--gray-900);
+  padding: 1.2rem;  
   height: 10rem; 
   margin: 1.2rem auto 8rem auto;
   text-align: center;
   gap: 2.4rem; /* Espacio entre logo y título */
 }
-
-.header__logo {
-  grid-area: logo; /* Asignamos la zona del logo */
-  width: 9.6rem;
-  height: 9.6rem;
-}
-
 .header__title {
   grid-area: title; /* Zona para el título */
 }
@@ -105,7 +103,7 @@ h2 {
 @media (width < 768px) {
   .header {
     grid-template-areas: 
-      "logo"
+      "logo" 
       "title"; /* Cambiamos a vertical */
     grid-template-columns: 1fr; /* 1 sola columna */
     grid-template-rows: auto auto; /* Las filas se ajustan */
@@ -124,20 +122,18 @@ h2 {
 .pokemonSearch {
 display: flex; 
 justify-content: start; 
-gap: 1.5rem; 
 margin: 3rem 0;  
 gap: 2.4rem;
 }
 
 .pokemonSearch__id {
 padding: 1rem;
-width: 30rem;
+width: 20rem;
 border: 0.2rem solid var(--primary-950);
 border-radius: 0.6rem;
 text-align: center;
 outline: none;
 font-size: var(--font-size-h4);
-transition: box-shadow 0.3s ease;
 }
 
 .pokemonSearch__button {
@@ -146,8 +142,7 @@ transition: box-shadow 0.3s ease;
     color: var(--black);
     border: none;
     border-radius: 0.6rem;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease-in-out;
+    cursor: pointer;    
   }
 
 .cards{    
@@ -167,7 +162,7 @@ transition: box-shadow 0.3s ease;
       grid-template-columns: 1fr;
     }
 }
-/* From Uiverse.io by dylanharriscameron */ 
+/* From Uiverse.io 2025 by dylanharriscameron */ 
 .cards__card {
     position: relative;
     width: 30rem;
@@ -193,7 +188,7 @@ transition: box-shadow 0.3s ease;
     backdrop-filter: blur(24px);
     border-radius: 0.6rem;
     overflow: hidden;
-    outline: 2px solid white;
+    outline: 2px solid var(--white);
   }
   
   .cards__blob {
@@ -244,5 +239,41 @@ transition: box-shadow 0.3s ease;
     object-fit: contain; /* Mantiene la proporción sin deformarse */
     image-rendering: pixelated; /* Para que no se vea borrosa */
     
+  }
+
+  .footer {  
+    text-align: center;
+  }
+  
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }  
+
+  .footer__highlight {
+    font-weight: bold;
+    color: var(--secundary-950);
+  }
+
+  .footer__text,
+  .footer__link,
+  .footer__license {
+    margin: 0 auto;
+  }
+  
+  .footer__link {
+    color: var(--primary-500);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer__link:hover {
+    color: var(--primary-950);
+  }
+  
+  .footer__image {
+    width: 66px;
+    height: 22px;
   }
   

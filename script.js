@@ -1,7 +1,7 @@
 // Función asincrónica para obtener información de un Pokémon
 async function fetchPokemon() {
     // Obtiene el valor del input por su ID y lo convierte a minúsculas para evitar errores con mayúsculas
-    const pokemon = document.querySelector(".pokemonSearch__id").value.toLowerCase();
+    const pokemon = document.querySelector(".pokemonSearch__id").value;
     
     // Construye la URL con el nombre o ID del Pokémon
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;

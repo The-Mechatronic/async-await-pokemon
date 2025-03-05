@@ -10,12 +10,12 @@
 <body class="container">
 
     <header class="header">
-        <img class="header__logo" src="./img/Logo_verde.png" alt="Logo">
+        <img class="header__logo" src="./img/Logo.png" alt="Logo">
         <h1 class="header__title">Rico Programar With a Pokemon</h1>
     </header>
 
     <section class="pokemonSearch">
-        <input type="text" class="pokemonSearch__id" placeholder="Ingresa ID">
+        <input type="text" class="pokemonSearch__id" placeholder="Ingresa Pokemon ID">
         <button class="pokemonSearch__button" onclick="fetchPokemon()">Buscar</button>
     </section>
 
@@ -43,7 +43,26 @@
             <div class="cards__bg"></div>
             <div class="cards__blob"></div>
         </article>
-</section>
+    </section>
+
+    <footer class="footer container">
+        <div class="footer__content">
+          <p class="footer__text">
+            RicoProgramar by - <span class="footer__highlight">Ing. Edwar Velásquez</span>
+          </p>
+          <p class="footer__license">
+            © 2025 - Licenciado bajo 
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="footer__link">
+              Creative Commons Attribution 4.0 International (CC BY 4.0)
+              <img 
+              src="https://licensebuttons.net/l/by/4.0/88x31.png" 
+              alt="Licencia Creative Commons Attribution 4.0"
+              class="footer__image"
+            />
+            </a>
+          </p>
+        </div>
+    </footer>  
 
 </body>
 </html>

@@ -1,3 +1,7 @@
+// crear una versión única cada vez que se recarga la página.
+const version = Date.now(); // Toma la fecha y hora actual como versión
+document.querySelector('link[rel="stylesheet"]').href += `?v=${version}`;
+
 // Función asincrónica para obtener información de un Pokémon
 async function fetchPokemon() {
     // Obtiene el valor del input por su ID y lo convierte a minúsculas para evitar errores con mayúsculas
@@ -44,3 +48,10 @@ async function fetchPokemon() {
         document.querySelector(".cards__image").src = ""; // Limpia la imagen si hay error
     }
 }
+
+// Evento para presionar Enter
+document.querySelector(".pokemonSearch__id").addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        fetchPokemon();
+    }
+});

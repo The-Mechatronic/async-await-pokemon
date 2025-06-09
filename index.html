@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Async - await</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body class="container">
+
+    <header class="header">
+        <img class="header__logo" src="./img/logo.png" alt="Logo">
+        <h1 class="header__title">Rico Programar With a Pokemon</h1>
+    </header>
+
+    <section class="pokemonSearch">
+        <input type="text" class="pokemonSearch__id" placeholder="Ingresa Pokemon ID">
+        <button class="pokemonSearch__button" onclick="fetchPokemon()">Buscar</button>
+    </section>
+
+    <section class="cards">
+        <article class="cards__card">
+            <h2 class="cards__title"></h2>
+            <p class="cards__experience"></p>
+            <img class="cards__image" src="" alt="Imagen del Pokémon">
+            <div class="cards__bg"></div>
+            <div class="cards__blob"></div>
+        </article>
+
+        <article class="cards__card">
+            <h2 class="cards__title"></h2>
+            <p class="cards__experience"></p>
+            <img class="cards__image" src="" alt="Imagen del Pokémon">
+            <div class="cards__bg"></div>
+            <div class="cards__blob"></div>
+        </article>
+
+        <!-- <article class="cards__card">
+            <h2 class="cards__title"></h2>
+            <p class="cards__experience"></p>
+            <img class="cards__image" src="" alt="Imagen del Pokémon">
+            <div class="cards__bg"></div>
+            <div class="cards__blob"></div>
+        </article> -->
+
+        <article class="cards__card">          
+        
+            <!-- Botón con estilo existente y z-index correcto -->
+            <a href="https://quieroserquierosaber.edu.co/estudiantes" target="_blank"
+                class="pokemonSearch__button cards__button-link">
+                Quiero ser, Quiero saber
+            </a>
+        
+            <div class="cards__bg"></div>
+            <div class="cards__blob"></div>
+        </article>
+
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">
+            RicoProgramar by - <span class="footer__highlight">Ing. Edwar Velásquez</span>
+          </p>
+          <p class="footer__license">
+            © 2025 - Licenciado bajo 
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="footer__link">
+              Creative Commons Attribution 4.0 International (CC BY 4.0)
+              <img 
+              src="https://licensebuttons.net/l/by/4.0/88x31.png" 
+              alt="Licencia Creative Commons Attribution 4.0"
+              class="footer__image"
+            />
+            </a>
+          </p>
+        </div>
+    </footer>  
+
+</body>
+</html>

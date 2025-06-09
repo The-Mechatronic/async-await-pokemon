@@ -144,7 +144,7 @@ font-size: var(--font-size-h4);
     border: none;
     border-radius: 0.6rem;
     cursor: pointer;    
-  }
+}
 
 .cards{    
     display: grid;
@@ -241,6 +241,12 @@ font-size: var(--font-size-h4);
     image-rendering: pixelated; /* Para que no se vea borrosa */
     
   }
+
+  .cards__button-link {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
 
   .footer {  
     text-align: center;
